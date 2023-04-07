@@ -241,8 +241,6 @@ There are several ways to handle integral windup, and for this implementation we
 
 In summary we get the following modified PID equation system:
 
-FIXME ensure that LATEX math symbols work on GitHub
-
 $$\begin{cases}
 S^{min} = 0 \\
 S^{max} = 65535 \\
@@ -255,7 +253,7 @@ I_n = k^i \sum^0_n E_m & \text{where } |i_n| ≤ S_{max} \\
 D_n = k^d (E_n - E_{n-1}) \\
 \\
 T^{*}_{n} = max(T^{*},T^{amb}_{n}) \\
-E_n = T_n - T^{*}_{n} & \text{(inversed error)} \\
+E_n = T_n - T^{*}_{n} & \text{inversed error} \\
 \\
 n = 1, 2, 3, ... \\
 \end{cases}$$
