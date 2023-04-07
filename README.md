@@ -204,16 +204,15 @@ A PID regulator can in the general and simplest case be described by the followi
 
 FIXME ensure that LATEX math symbols work on GitHub
 
-$$
-\begin{cases}
+$$\begin{cases}
 S_0 = 0 \\
 S_n = k^p E_{n} + k^i \sum^0_n E_m + k^d (E_n - E_{n-1}) \\
 \\
 E_n = T^* - T_n \\
 \\
 n = 1, 2, 3, ... \\
-\end{cases}
-$$
+\end{cases}$$
+
 ... where each iteration _n_ of a regulator loop produces a singal (S) as a function of the error (E) between the current (T) and desired (T*) state of a measured value controlled by the signal.
 
 The signal is composed of a proportional (P), integral (I) and derivative (D) term. The corresponding _gains_ ($k^p$, $k^i$, and $k^d$) indicate how much weight to give to each term of the signal.
@@ -246,8 +245,7 @@ In summary we get the following modified PID equation system:
 
 FIXME ensure that LATEX math symbols work on GitHub
 
-$$
-\begin{cases}
+$$\begin{cases}
 S^{min} = 0 \\
 S^{max} = 65535 \\
 \\
@@ -263,8 +261,7 @@ T^*_n = max(T^*,T^{amb}_n)
 E_n = T_n - T^*_n & \text{(inversed error)} \\
 \\
 n = 1, 2, 3, ... \\
-\end{cases}
-$$
+\end{cases}$$
 
 ## References
 * [How to Tune a PID Controller](https://pidexplained.com/how-to-tune-a-pid-controller/)
