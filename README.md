@@ -202,8 +202,6 @@ TODO add schema for how power is transmitted to the fan.
 ### PID regulator
 A PID regulator can in the general and simplest case be described by the following mathematical expression:
 
-FIXME ensure that LATEX math symbols work on GitHub
-
 $$\begin{cases}
 S_0 = 0 \\
 S_n = k^p E_{n} + k^i \sum^0_n E_m + k^d (E_n - E_{n-1}) \\
@@ -252,13 +250,13 @@ S^{max} = 65535 \\
 S_0 = S^{min}\\
 S_n = P_n + I_n + D_n & \text{where } S_{min} ≤ S_n ≤ S_{max} \\
 \\
-P_n = k^p E_{n} \\
-I_n = k^i \sum^0_n E_m & \text{where } |i_n| ≤ S_{max} \\
-D_n = k^d (E_n - E_{n-1}) \\
+P_n = k^{p} E_{n} \\
+I_n = k^{i} \sum^0_n E_m & \text{where } |i_n| ≤ S_{max} \\
+D_n = k^{d} (E_n - E_{n-1}) \\
 \\
-T^*_n = max(T^*,T^{amb}_n)
+T^*_n = max(T^{*},T^{amb}_n)
 \\
-E_n = T_n - T^*_n & \text{(inversed error)} \\
+E_n = T_n - T^{*}_n & \text{(inversed error)} \\
 \\
 n = 1, 2, 3, ... \\
 \end{cases}$$
