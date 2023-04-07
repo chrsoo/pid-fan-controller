@@ -67,6 +67,25 @@ The following improvements are planned before the first version of the fan contr
 
 * The two JST pins should be replaced by a four-pin socket fitting the standard computer fan plug.
 
+## Roadmap
+
+### Version 1.0
+
+ - [ ] add connector to temperature probe
+ - [ ] replace JST pins with fan connector
+ - [ ] use ambient temperature as lower bound for target temperature
+
+### Version 1.1 - tuning over serial interface
+
+ - [ ] plot temperature, signal and PID components dynamically on a graph
+ - [ ] dynamically update gains constants
+ - [ ] dynamically update temperature target
+
+### Version 2.0 - display & controls
+
+ - [ ] display temperature using display in case
+ - [ ] control temperature target using control in case
+
 ## Future directions
 
 ### In situ PID tuning
@@ -92,11 +111,17 @@ A simple seven segment LED with four digits and a rotary encoder with a button f
 
 Possibly the display and capacitive buttons could be mounted on the inside of a glass panel of the case.
 
+### Autotuning
+
+Commercial PID regulators often support auto tuning. This sounds (very) useful but requires further investigation.
+
 ## Hardware
 ### Bill of Materials
 #### Fan controller
 ![Fan controller](assets/fan-controller.png)
 ![Fan controller closeup](assets/fan-controller-closeup.png)
+TODO add fan controller schema image
+
 * Raspberry Pico
 * DS18x20 temperature probe
 * 10 kΩ resistor
@@ -107,6 +132,8 @@ Possibly the display and capacitive buttons could be mounted on the inside of a 
 #### Fan controller lab
 ![Fan controller lab with 12V DC PWM fan](assets/fan-controller-lab.png)
 ![Closeup of the lab breadboard](assets/fan-controller-lab-closeup.png)
+TODO add fan controller schema image with fan and power supply
+
 * Raspberry Pico H
 * 80mm PWM fan
 * DS18x20 temperature probe
@@ -175,6 +202,8 @@ TODO add schema for how power is transmitted to the fan.
 ### PID regulator
 A PID regulator can in the general and simplest case be described by the following mathematical expression:
 
+FIXME ensure that LATEX math symbols work on GitHub
+
 $$
 \begin{cases}
 S_0 = 0 \\
@@ -214,6 +243,8 @@ As for [integral windup](https://en.wikipedia.org/wiki/Integral_windup) this is 
 There are several ways to handle integral windup, and for this implementation we will limit limit the integral sum to the positive or negative value of the maximum signal.
 
 In summary we get the following modified PID equation system:
+
+FIXME ensure that LATEX math symbols work on GitHub
 
 $$
 \begin{cases}
