@@ -43,7 +43,7 @@ The main considerations are
 In the current version of the fan controller program, this time is spent sleeping, but future iterations could see the time being used for something productive.
 
 ### Tuning the PID controller
-The main challenge in using a PID controller is finding the right gains, i.e. the values of kp, ki and kd.
+The main challenge in using a PID controller is finding the right gains, i.e. the values of $k^p$, $k^i$ and $k^d$.
 
 Part of the challenge is that the lab setup is not a faithful model for the dynamics of case temperature and fans, and with badly tuned values and the fan control will take time to reach a steady state or become unstable.
 
@@ -95,7 +95,7 @@ To accomplish this the following options can be envisaged:
 
 * Connect the Micro-USB interface to to a computer while the fan controller is mounted in the case, is connected to the fans, and find a way to plot the values in real-time.
 
-* Switching to a Raspberry Pico W that provides a web page with one or more graphs of the signal, the contribution for each of the P, I and D components and fields for dynamically updating the kp, ki, and kd constants.
+* Switching to a Raspberry Pico W that provides a web page with one or more graphs of the signal, the contribution for each of the P, I and D components and fields for dynamically updating the $k^p$, $k^i$, and $k^d$ constants.
 
 The first option is preferred as it keeps the regulator simpler and does not expose the fan controller to a Wifi network. Exposing the controller to a WiFi network raises security questions and management isues.
 
@@ -216,7 +216,7 @@ n = 1, 2, 3, ... \\
 $$
 ... where each iteration _n_ of a regulator loop produces a singal (S) as a function of the error (E) between the current (T) and desired (T*) state of a measured value controlled by the signal.
 
-The signal is composed of a proportional (P), integral (I) and derivative (D) term. The corresponding _gains_ (kp, ki, and kd) indicate how much weight to give to each term of the signal.
+The signal is composed of a proportional (P), integral (I) and derivative (D) term. The corresponding _gains_ ($k^p$, $k^i$, and $k^d$) indicate how much weight to give to each term of the signal.
 
 As the derivative part is sensitive to minute variations in the measured value, and thus may cause undesired variations in the signal, the derivative gain is often set to zero and effectively eliminating the derivative term. This is usually referred to as a PI regulator.
 
