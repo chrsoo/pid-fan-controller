@@ -1,3 +1,4 @@
+# PID Fan Controller
 ## Goal
 Maintain a given temperature inside a case using PWM fans, a PID regulator and a temperature probe.
 ## Objectives
