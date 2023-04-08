@@ -57,15 +57,13 @@ A rule of thumb is to start with a proportional gain equal to half the value for
 
     Still figuring out what the correct gains are for my specific system.
 
-## Limitations
+## Improvements
 
 The fan controller must be disconnected from the computer case to update the program and/or program parameters.
 
 This makes tuning a hassle. Tuning using the lab setup, at best only gives ballbark values of the parameters.
 
-## Improvements
-
-The following improvements are planned before the first version of the fan controller can be considered ready:
+The following improvements are planned before the first version of the fan controller can be considered done:
 
 * Connectors should be introduced to facilitate connecting and disconnecting the PID controller from the probe. Without this it is not feasible to mount the probe in a fixed position.
 
