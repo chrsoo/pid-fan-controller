@@ -206,14 +206,14 @@ $$\begin{cases}
 S_0 = 0 \\
 S_n = k^p E_{n} + k^i \sum^0_n E_m + k^d (E_n - E_{n-1}) \\
 \\
-E_n = T^* - T_n \\
+E_n = T^t - T_n \\
 \\
 n = 1, 2, 3, ... \\
 \end{cases}$$
 
-... where each iteration _n_ of a regulator loop produces a singal (S) as a function of the error (E) between the current (T) and desired (T*) state of a measured value controlled by the signal.
+... where each iteration _n_ of a regulator loop produces a singal ($S$) as a function of the error ($E$) between the current ($T$) and desired ($T^t$) state of a measured value controlled by the signal.
 
-The signal is composed of a proportional (P), integral (I) and derivative (D) term. The corresponding _gains_ ($k^p$, $k^i$, and $k^d$) indicate how much weight to give to each term of the signal.
+The signal is composed of a proportional ($P$), integral ($I$) and derivative ($D$) term. The corresponding _gains_ ($k^p$, $k^i$, and $k^d$) indicate how much weight to give to each term of the signal.
 
 As the derivative part is sensitive to minute variations in the measured value, and thus may cause undesired variations in the signal, the derivative gain is often set to zero and effectively eliminating the derivative term. This is usually referred to as a PI regulator.
 
@@ -221,7 +221,7 @@ As the derivative part is sensitive to minute variations in the measured value, 
 
 In our case we want to control a PWM case fan based on the temperature measured inside a computer case. We have the following considerations:
 
-* The signal (duty cycle), is expressed as a fraction of 65535.
+* The signal (duty cycle) is expressed as a fraction of 65535.
 * The signal is inversed in regard to the nominal regulator
 * There is a minimal desired signal at which the fan should operate.
 * The target temperature should greater than the ambient temperature in the room.
@@ -252,8 +252,8 @@ P_n = k^p E_{n} \\
 I_n = k^i \sum^0_n E_m & \text{where } |i_n| ≤ S_{max} \\
 D_n = k^d (E_n - E_{n-1}) \\
 \\
-T^t_n = \text{ max }(T^t,T^{amb}_{n}) \\
-E_n = T_n - T^t_n & \text{inversed error} \\
+T^t_n = \max(T^t,T^{amb}_{n}) \\
+E_n = T_n - T^t_n & (\text{inversed error}) \\
 \\
 n = 1, 2, 3, ... \\
 \end{cases}$$
