@@ -2,8 +2,9 @@
 ## Goal
 Maintain a given temperature inside a case using PWM fans, a PID regulator and a temperature probe.
 ## Objectives
-* PID regulator runs independently of the main computer.
-* Regulator is built using inexpensive commononly available parts.
+* Regulate temperature in case indpendently of the main computer.
+* Build fan controller out of inexpensive and commonly available parts.
+* Learn more about electronics by building a simple electronic device.
 
 ## Build
 
