@@ -252,7 +252,7 @@ P_n = k^p E_{n} \\
 I_n = k^i \sum^0_n E_m & \text{where } |i_n| ≤ S_{max} \\
 D_n = k^d (E_n - E_{n-1}) \\
 \\
-T^*_n = \max T^* T^{amb}_{n} \\
+T^*_n = T^*, T^{amb}_{n} \\
 E_n = T_n - T^*_n & \text{(inversed error)} \\
 \\
 n = 1, 2, 3, ... \\
