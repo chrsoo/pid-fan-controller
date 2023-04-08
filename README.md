@@ -4,6 +4,10 @@ Maintain a given temperature inside a case using PWM fans, a PID regulator and a
 * PID regulator runs independently of the main computer.
 * Regulator is built using inexpensive commononly available parts.
 
+## Build
+
+TODO document the steps for building the fan controller
+
 ## Notes
 
 ### Powering the fan controller in the lab setup
@@ -31,7 +35,7 @@ Powering the device inside the computer case was simpler than in the lab setup.
 
 All that is required is a cable that converts 4 pin Molex socket into a Micro-USB connector as the Molex connector provides both 12V and 5V pins and the ground is shared with the rest of the computer, including the fans. Only ground and the 5V pins need to be connected to the Micro-USB connector.
 
-### Measuring tempearture
+### Measuring temperature
 Measuring temperature using the DS18B20 temperature probe wisas fairly straight forward using standard MicroPython librarires.
 
 The main considerations are
@@ -86,7 +90,7 @@ The following improvements are planned before the first version of the fan contr
  - [ ] display temperature using display in case
  - [ ] control temperature target using control in case
 
-## Future directions
+## Reflections
 
 ### In situ PID tuning
 It is clear that the PID controller must be tuned in situe, i.e. when mounted inside the case. It would also be useful to plot the value in a graph.
@@ -103,6 +107,10 @@ However the first option must ensure that fan controller, computer running the c
 
 If the computer used for the tuning is the computer in the case, there should be no electrical issue.
 
+### Auto-tuning
+
+Commercial PID regulators often support auto tuning. This sounds (very) useful but requires further investigation.
+
 ### Controller interface
 
 Once the gains have been configured it would be nice to with a display that shows the target and current temperature and where the target temperature can be set.
@@ -110,10 +118,6 @@ Once the gains have been configured it would be nice to with a display that show
 A simple seven segment LED with four digits and a rotary encoder with a button function would work fine, the main issue is how to integrate it in the case in a good way.
 
 Possibly the display and capacitive buttons could be mounted on the inside of a glass panel of the case.
-
-### Autotuning
-
-Commercial PID regulators often support auto tuning. This sounds (very) useful but requires further investigation.
 
 ## Hardware
 ### Bill of Materials
@@ -153,15 +157,17 @@ TODO add fan controller schema image with fan and power supply
 
 ### Sourcing
 
-Biggest challenge is to source electronic components without paying high unit costs for low volumes and without incurring signficant surcharges from courier services.
+Biggest challenge for a small hobby project is to source electronic components without paying high unit costs for low volumes and without incurring signficant surcharges from courier services.
 
 Prices vary signficantly between vendors of the same component as buying in bulk and reselling with a very high markup seems to be a dominant business model. It is very easy to tricked into paying too much for a component.
 
-Many of the components came from a single starter kit:
+#### Kits
+
+Several of the componentsin in this project came from a single starter kit:
 
 * [BOJACK 37](https://www.amazon.de/dp/B09DCB5D9N?psc=1&ref=ppx_yo2ov_dt_b_product_details) (€14.28)
 
- I particularily like the 12V-5/3.3V DC power converter. The resistor came from an old kit not documented here.
+ The resistor came from an old kit not documented here. I particularily like the 12V-5/3.3V DC power converter in the BOJACK 37 kit.
 
 #### Components
 
@@ -181,9 +187,12 @@ Many of the components came from a single starter kit:
 * Old glue gun sourced from the tool box...
 
 ## Software
+MicroPython is chosen for ease of use. All the libraries used for the fan controller are included in the standard MicroPython distribution.
+
 * [MicroPython](https://micropython.org/) (v1.19.1)
 * [Visual Studio Code](https://code.visualstudio.com/) with the [Pico-W-Go](https://marketplace.visualstudio.com/items?itemName=paulober.pico-w-go) (v2.1.8) extension
-* [Thonny](https://thonny.org/) (for installing MicroPython)
+
+To install the MicroPython distribution on the Pico, [Thonny](https://thonny.org/) was used.
 
 ## Theory
 ### PWM fan control
