@@ -237,7 +237,7 @@ Although there might be a windchill effect when using a fan it is not desirable 
 
 As for [integral windup](https://en.wikipedia.org/wiki/Integral_windup) this is an effect where it takes very long for the regulator to reach its value, which may make the integral sum too large. In our case the, it takes a long time for the temperature probe to adjust to the air temperature.
 
-There are several ways to handle integral windup, and for this implementation we will limit limit the integral sum to the positive or negative value of the maximum signal.
+There are several ways to handle integral windup, and for this implementation we will limit limit the integral sum to an integer between the negative and positive value of the maximum signal.
 
 In summary we get the following modified PID equation system:
 
