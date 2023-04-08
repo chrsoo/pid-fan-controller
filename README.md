@@ -252,8 +252,8 @@ P_n = k^p E_{n} \\
 I_n = k^i \sum^0_n E_m & \text{where } |i_n| ≤ S_{max} \\
 D_n = k^d (E_n - E_{n-1}) \\
 \\
-T^*_n = 0 \\
-E_n = T_n - T^{t}_{n} & (\text{inversed error}) \\
+T^t_n = \text{ max }(T^t,T^{amb}_{n}) \\
+E_n = T_n - T^t_n & \text{inversed error} \\
 \\
 n = 1, 2, 3, ... \\
 \end{cases}$$
