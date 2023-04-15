@@ -38,7 +38,7 @@ Powering the device inside the computer case was simpler than in the lab setup.
 All that is required is a cable that converts 4 pin Molex socket into a Micro-USB connector as the Molex connector provides both 12V and 5V pins and the ground is shared with the rest of the computer, including the fans. Only ground and the 5V pins need to be connected to the Micro-USB connector.
 
 ### Measuring temperature
-Measuring temperature using the DS18B20 temperature probe wisas fairly straight forward using standard MicroPython librarires.
+Measuring temperature using the DS18B20 temperature probe is fairly straight forward using standard MicroPython librarires.
 
 The main considerations are
 
@@ -53,9 +53,9 @@ The main challenge in using a PID controller is finding the right gains, i.e. th
 
 Part of the challenge is that the lab setup is not a faithful model for the dynamics of case temperature and fans, and with badly tuned values and the fan control will take time to reach a steady state or become unstable.
 
-The standard tip is to first start with zeroing all three gains and then start by slowly increasing the proportional gain, followed by the integral and derivative gains in order.
+The standard tip is to first zeroing all three gains and then to slowly increase the proportional gain, followed by the integral and derivative gains one at a time.
 
-A rule of thumb is to start with a proportional gain equal to half the value for which the system starts to oscillate.
+A rule of thumb is to use a proportional gain equal to half the value for which the system starts to oscillate.
 
     Still figuring out what the correct gains are for my specific system.
 
@@ -85,10 +85,10 @@ The following improvements are planned before the first version of the fan contr
  - [ ] dynamically update gains constants
  - [ ] dynamically update temperature target
 
-### Version 2.0 - display & controls
+### Version 2.0 - human interface
 
- - [ ] display temperature using display in case
- - [ ] control temperature target using control in case
+ - [ ] display temperature using a display
+ - [ ] control temperature target using a rotary encoder
 
 ## Reflections
 
@@ -213,7 +213,7 @@ A PID regulator can in the general and simplest case be described by the followi
 
 $$\begin{cases}
 S_0 = 0 \\
-S_n = k^p E_{n} + k^i \sum^0_n E_m + k^d (E_n - E_{n-1}) \\
+S_n = k^p E_{n} + k^i \sum_0^n E_m + k^d (E_n - E_{n-1}) \\
 \\
 E_n = T^t - T_n \\
 \\
